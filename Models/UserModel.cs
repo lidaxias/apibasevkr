@@ -8,7 +8,7 @@ namespace apibase.Models
 
         [Key] 
         [Column("user_id")]
-        public int IdUser { get; set; }
+        public int UserId { get; set; }
 
         [Column("user_name")]
         public string Username { get; set; }

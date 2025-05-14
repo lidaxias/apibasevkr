@@ -31,6 +31,7 @@ namespace apibase.Controllers
 
             return Ok(new
             {
+                Userid = user.UserId,
                 Username = user.Username,
                 Userlogin = user.Login,
                 Userphone = user.Phone

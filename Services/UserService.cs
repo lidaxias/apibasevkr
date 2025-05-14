@@ -43,6 +43,11 @@ namespace apibase.Services
             return BCrypt.Net.BCrypt.Verify(enteredPassword, storedHash);
         }
 
+        public async Task<UserModel> GetByIdAsync(int userId)
+        {
+            return await _dbContext.Users.FindAsync(userId);
+        }
+
         public async Task<UserModel> RegisterAsync(string username, string password)
         {
             // хэшируем пароль перед сохранением
@@ -65,5 +70,7 @@ namespace apibase.Services
     {
         Task<UserModel> AuthenticateAsync(string username, string password);
         Task<UserModel> RegisterAsync(string username, string password);
+
+        Task<UserModel> GetByIdAsync(int userId);
     }
 }
